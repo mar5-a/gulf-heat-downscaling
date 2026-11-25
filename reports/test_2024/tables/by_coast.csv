@@ -1,0 +1,3 @@
+coast,era5_raw,lapse_rate,hourly_bias,lightgbm_hourly,lightgbm_terrain,lightgbm_sea,lightgbm,mlp,rows
+5 km or more inland,1.254,1.161,1.2,1.165,1.104,1.098,1.079,1.186,443204
+within 5 km of sea,1.366,1.3,1.348,1.287,1.324,1.324,1.343,1.331,211574

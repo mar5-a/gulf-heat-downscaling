@@ -1,0 +1,9 @@
+model,cv_mae_2023
+era5_raw,1.3261
+lapse_rate,1.2609
+hourly_bias,1.2957
+lightgbm_hourly,1.2393
+lightgbm_terrain,1.2295
+lightgbm_sea,1.2465
+lightgbm,1.2351
+mlp,1.3184

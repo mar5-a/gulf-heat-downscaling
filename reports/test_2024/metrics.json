@@ -1,0 +1,467 @@
+{
+  "stations": 78,
+  "test_rows": 654778,
+  "gbm_params": {
+    "lightgbm_hourly": {
+      "num_leaves": 15,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm_terrain": {
+      "num_leaves": 15,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm_sea": {
+      "num_leaves": 63,
+      "min_child_samples": 100,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm": {
+      "num_leaves": 15,
+      "min_child_samples": 100,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    }
+  },
+  "map_model": "lightgbm_terrain",
+  "map_model_chosen_by": "lowest error on held-out stations in 2023 (5 station groups)",
+  "cv_2023": {
+    "era5_raw": 1.326,
+    "lapse_rate": 1.261,
+    "hourly_bias": 1.296,
+    "lightgbm_hourly": 1.239,
+    "lightgbm_terrain": 1.229,
+    "lightgbm_sea": 1.246,
+    "lightgbm": 1.235,
+    "mlp": 1.318
+  },
+  "map_model_unseen_mae_2024": 1.175,
+  "era5_unseen_mae_2024": 1.29,
+  "lowest_unseen_mae_2024_model": "lightgbm",
+  "summary": [
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "era5_raw",
+      "mae": 1.29,
+      "rmse": 1.724,
+      "bias": -0.324,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lapse_rate",
+      "mae": 1.206,
+      "rmse": 1.655,
+      "bias": 0.031,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.065
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "hourly_bias",
+      "mae": 1.243,
+      "rmse": 1.658,
+      "bias": -0.074,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.037
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_hourly",
+      "mae": 1.124,
+      "rmse": 1.498,
+      "bias": -0.071,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.129
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_terrain",
+      "mae": 0.949,
+      "rmse": 1.284,
+      "bias": -0.062,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.264
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_sea",
+      "mae": 0.871,
+      "rmse": 1.185,
+      "bias": -0.056,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.325
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm",
+      "mae": 0.922,
+      "rmse": 1.247,
+      "bias": -0.068,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.286
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "mlp",
+      "mae": 1.055,
+      "rmse": 1.459,
+      "bias": -0.038,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.182
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "era5_raw",
+      "mae": 1.29,
+      "rmse": 1.724,
+      "bias": -0.324,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lapse_rate",
+      "mae": 1.206,
+      "rmse": 1.655,
+      "bias": 0.031,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.065
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "hourly_bias",
+      "mae": 1.248,
+      "rmse": 1.665,
+      "bias": -0.074,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.033
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_hourly",
+      "mae": 1.205,
+      "rmse": 1.606,
+      "bias": -0.065,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.066
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_terrain",
+      "mae": 1.175,
+      "rmse": 1.592,
+      "bias": -0.061,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.089
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_sea",
+      "mae": 1.171,
+      "rmse": 1.585,
+      "bias": -0.066,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.092
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm",
+      "mae": 1.164,
+      "rmse": 1.581,
+      "bias": -0.042,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.097
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "mlp",
+      "mae": 1.233,
+      "rmse": 1.669,
+      "bias": 0.017,
+      "n": 654778,
+      "mae_cut_vs_era5": 0.044
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "era5_raw",
+      "mae": 1.365,
+      "rmse": 1.841,
+      "bias": -0.358,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lapse_rate",
+      "mae": 1.332,
+      "rmse": 1.828,
+      "bias": -0.055,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.024
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "hourly_bias",
+      "mae": 1.306,
+      "rmse": 1.759,
+      "bias": -0.108,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.043
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_hourly",
+      "mae": 1.182,
+      "rmse": 1.58,
+      "bias": -0.135,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.134
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_terrain",
+      "mae": 1.003,
+      "rmse": 1.355,
+      "bias": -0.106,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.265
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_sea",
+      "mae": 0.914,
+      "rmse": 1.246,
+      "bias": -0.102,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.33
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm",
+      "mae": 0.972,
+      "rmse": 1.312,
+      "bias": -0.1,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.288
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "mlp",
+      "mae": 1.132,
+      "rmse": 1.588,
+      "bias": -0.19,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.171
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "era5_raw",
+      "mae": 1.365,
+      "rmse": 1.841,
+      "bias": -0.358,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lapse_rate",
+      "mae": 1.332,
+      "rmse": 1.828,
+      "bias": -0.055,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.024
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "hourly_bias",
+      "mae": 1.313,
+      "rmse": 1.768,
+      "bias": -0.104,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.038
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_hourly",
+      "mae": 1.283,
+      "rmse": 1.717,
+      "bias": -0.143,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.06
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_terrain",
+      "mae": 1.294,
+      "rmse": 1.761,
+      "bias": -0.092,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.052
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_sea",
+      "mae": 1.291,
+      "rmse": 1.748,
+      "bias": -0.132,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.054
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm",
+      "mae": 1.288,
+      "rmse": 1.745,
+      "bias": -0.091,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.057
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "mlp",
+      "mae": 1.316,
+      "rmse": 1.777,
+      "bias": -0.04,
+      "n": 309242,
+      "mae_cut_vs_era5": 0.035
+    }
+  ],
+  "ablation": [
+    {
+      "left_out": "nothing",
+      "mae": 1.164,
+      "mae_increase": 0.0
+    },
+    {
+      "left_out": "weather",
+      "mae": 1.201,
+      "mae_increase": 0.037
+    },
+    {
+      "left_out": "time",
+      "mae": 1.173,
+      "mae_increase": 0.009
+    },
+    {
+      "left_out": "terrain",
+      "mae": 1.232,
+      "mae_increase": 0.068
+    },
+    {
+      "left_out": "sea",
+      "mae": 1.173,
+      "mae_increase": 0.008
+    },
+    {
+      "left_out": "land_cover",
+      "mae": 1.171,
+      "mae_increase": 0.007
+    }
+  ],
+  "top_features": {
+    "lightgbm_hourly": {
+      "upwind_sea": 0.243,
+      "era5_ssrd": 0.139,
+      "era5_dpd": 0.125,
+      "era5_dt1": 0.084,
+      "era5_t2m": 0.072,
+      "era5_dt3": 0.069,
+      "hour_sin": 0.065,
+      "upwind_sea_x_wind": 0.047
+    },
+    "lightgbm_terrain": {
+      "elev_minus_era5": 0.318,
+      "elev": 0.308,
+      "era5_ssrd": 0.075,
+      "upwind_sea": 0.042,
+      "era5_dpd": 0.039,
+      "era5_dt1": 0.038,
+      "hour_sin": 0.038,
+      "hour_cos": 0.034
+    },
+    "lightgbm_sea": {
+      "elev_minus_era5": 0.224,
+      "elev": 0.179,
+      "sea_frac_10km": 0.077,
+      "dist_sea_km": 0.074,
+      "era5_ssrd": 0.066,
+      "hour_sin": 0.054,
+      "doy_cos": 0.04,
+      "sea_frac_25km": 0.038
+    },
+    "lightgbm": {
+      "elev_minus_era5": 0.167,
+      "elev": 0.101,
+      "era5_ssrd": 0.071,
+      "built_near": 0.047,
+      "bare_near": 0.043,
+      "shrub_grass_far": 0.039,
+      "hour_sin": 0.039,
+      "sea_frac_10km": 0.038
+    }
+  },
+  "stations_worse_after_correction": [
+    "Turaif",
+    "Gassim",
+    "Dammam-King Fahd International Airport",
+    "Mahshahr / Bandar Mahshahr / Bandar-e M?hshahr",
+    "Kerman",
+    "Bandar Lengeh",
+    "Chahbahar",
+    "Jeddah King Abdul Aziz International Airport",
+    "Al Baha",
+    "Khamis Mushait",
+    "Bahrain International Airport",
+    "Ai Ruwais / Al Khuwayr",
+    "Abu Samra / Al Kir\u2018?nah",
+    "Dubai International Airport",
+    "Sharjah International Airport",
+    "Fujairah",
+    "Abu Dhabi International Airport",
+    "Al Ain International Airport",
+    "Sohar Majis",
+    "Seeb, International Airport",
+    "Fahud",
+    "Al Dhafra / Al Muqa??arah",
+    "Camp Udari / Highway of Death",
+    "Al-Kharj/Prince Sultan Airbase / As Sahb?\u2019"
+  ]
+}
