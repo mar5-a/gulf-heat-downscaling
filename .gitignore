@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+.pytest_cache/
+# my own notes: design decisions, interview prep, form drafts
+notes/
+private/
+
+# run logs contain local paths
+reports/history/*.log
