@@ -1,0 +1,10 @@
+model,cv_mae_train
+era5_raw,1.3075
+lapse_rate,1.2328
+hourly_bias,1.2651
+lightgbm_hourly,1.2115
+lightgbm_cell,1.175
+lightgbm_sea,1.1803
+lightgbm,1.1657
+lightgbm_first_design,1.1763
+mlp,1.306

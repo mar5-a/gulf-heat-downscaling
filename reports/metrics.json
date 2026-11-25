@@ -1,0 +1,538 @@
+{
+  "train_years": [
+    2023,
+    2024
+  ],
+  "test_years": [
+    2025
+  ],
+  "stations": 67,
+  "test_rows": 541905,
+  "test_stations_without_training_rows": [],
+  "gbm_params": {
+    "lightgbm_hourly": {
+      "num_leaves": 15,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm_cell": {
+      "num_leaves": 15,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm_sea": {
+      "num_leaves": 15,
+      "min_child_samples": 100,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm": {
+      "num_leaves": 63,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    },
+    "lightgbm_first_design": {
+      "num_leaves": 15,
+      "min_child_samples": 2000,
+      "learning_rate": 0.05,
+      "n_estimators": 300
+    }
+  },
+  "map_model": "lightgbm",
+  "map_model_chosen_by": "lowest error on held-out stations in the training years (5 station groups), among models that cannot make higher ground warmer",
+  "cv_train": {
+    "era5_raw": 1.308,
+    "lapse_rate": 1.233,
+    "hourly_bias": 1.265,
+    "lightgbm_hourly": 1.211,
+    "lightgbm_cell": 1.175,
+    "lightgbm_sea": 1.18,
+    "lightgbm": 1.166,
+    "lightgbm_first_design": 1.176,
+    "mlp": 1.306
+  },
+  "map_model_unseen_mae_test": 1.199,
+  "era5_unseen_mae_test": 1.363,
+  "lowest_unseen_mae_test_model": "lightgbm",
+  "first_design_vs_map_model_unseen": {
+    "all": {
+      "era5_raw": 1.363,
+      "lightgbm_first_design": 1.222,
+      "lightgbm": 1.199
+    },
+    "gulf_box": {
+      "era5_raw": 1.479,
+      "lightgbm_first_design": 1.377,
+      "lightgbm": 1.328
+    }
+  },
+  "summary": [
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "era5_raw",
+      "mae": 1.363,
+      "rmse": 1.832,
+      "bias": -0.362,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lapse_rate",
+      "mae": 1.282,
+      "rmse": 1.773,
+      "bias": 0.01,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.06
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "hourly_bias",
+      "mae": 1.303,
+      "rmse": 1.753,
+      "bias": -0.072,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.044
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_hourly",
+      "mae": 1.176,
+      "rmse": 1.583,
+      "bias": -0.086,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.138
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_cell",
+      "mae": 1.053,
+      "rmse": 1.434,
+      "bias": -0.072,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.228
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_sea",
+      "mae": 1.008,
+      "rmse": 1.368,
+      "bias": -0.065,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.26
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm",
+      "mae": 0.892,
+      "rmse": 1.218,
+      "bias": -0.064,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.345
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "lightgbm_first_design",
+      "mae": 0.99,
+      "rmse": 1.349,
+      "bias": -0.064,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.274
+    },
+    {
+      "scope": "all",
+      "setting": "seen",
+      "model": "mlp",
+      "mae": 0.984,
+      "rmse": 1.332,
+      "bias": -0.079,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.279
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "era5_raw",
+      "mae": 1.363,
+      "rmse": 1.832,
+      "bias": -0.362,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lapse_rate",
+      "mae": 1.282,
+      "rmse": 1.773,
+      "bias": 0.01,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.06
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "hourly_bias",
+      "mae": 1.309,
+      "rmse": 1.76,
+      "bias": -0.072,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.04
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_hourly",
+      "mae": 1.262,
+      "rmse": 1.7,
+      "bias": -0.085,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.074
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_cell",
+      "mae": 1.244,
+      "rmse": 1.698,
+      "bias": -0.096,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.087
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_sea",
+      "mae": 1.236,
+      "rmse": 1.679,
+      "bias": -0.051,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.094
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm",
+      "mae": 1.199,
+      "rmse": 1.637,
+      "bias": -0.026,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.121
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "lightgbm_first_design",
+      "mae": 1.222,
+      "rmse": 1.673,
+      "bias": -0.089,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.104
+    },
+    {
+      "scope": "all",
+      "setting": "unseen",
+      "model": "mlp",
+      "mae": 1.359,
+      "rmse": 1.859,
+      "bias": 0.058,
+      "n": 541905,
+      "mae_cut_vs_era5": 0.003
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "era5_raw",
+      "mae": 1.479,
+      "rmse": 1.993,
+      "bias": -0.532,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lapse_rate",
+      "mae": 1.438,
+      "rmse": 1.973,
+      "bias": -0.194,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.027
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "hourly_bias",
+      "mae": 1.392,
+      "rmse": 1.877,
+      "bias": -0.243,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.059
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_hourly",
+      "mae": 1.266,
+      "rmse": 1.702,
+      "bias": -0.228,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.144
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_cell",
+      "mae": 1.14,
+      "rmse": 1.537,
+      "bias": -0.178,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.229
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_sea",
+      "mae": 1.076,
+      "rmse": 1.45,
+      "bias": -0.152,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.273
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm",
+      "mae": 0.945,
+      "rmse": 1.275,
+      "bias": -0.133,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.361
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "lightgbm_first_design",
+      "mae": 1.07,
+      "rmse": 1.445,
+      "bias": -0.149,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.276
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "seen",
+      "model": "mlp",
+      "mae": 1.024,
+      "rmse": 1.39,
+      "bias": -0.185,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.307
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "era5_raw",
+      "mae": 1.479,
+      "rmse": 1.993,
+      "bias": -0.532,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.0
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lapse_rate",
+      "mae": 1.438,
+      "rmse": 1.973,
+      "bias": -0.194,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.027
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "hourly_bias",
+      "mae": 1.399,
+      "rmse": 1.886,
+      "bias": -0.237,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.054
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_hourly",
+      "mae": 1.363,
+      "rmse": 1.828,
+      "bias": -0.257,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.078
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_cell",
+      "mae": 1.41,
+      "rmse": 1.897,
+      "bias": -0.276,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.047
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_sea",
+      "mae": 1.41,
+      "rmse": 1.889,
+      "bias": -0.225,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.047
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm",
+      "mae": 1.328,
+      "rmse": 1.792,
+      "bias": -0.18,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.102
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "lightgbm_first_design",
+      "mae": 1.377,
+      "rmse": 1.874,
+      "bias": -0.257,
+      "n": 247772,
+      "mae_cut_vs_era5": 0.069
+    },
+    {
+      "scope": "gulf_box",
+      "setting": "unseen",
+      "model": "mlp",
+      "mae": 1.481,
+      "rmse": 1.995,
+      "bias": -0.051,
+      "n": 247772,
+      "mae_cut_vs_era5": -0.002
+    }
+  ],
+  "ablation": [
+    {
+      "left_out": "nothing",
+      "mae": 1.199,
+      "mae_increase": 0.0
+    },
+    {
+      "left_out": "weather",
+      "mae": 1.247,
+      "mae_increase": 0.048
+    },
+    {
+      "left_out": "time",
+      "mae": 1.219,
+      "mae_increase": 0.021
+    },
+    {
+      "left_out": "era5_cell",
+      "mae": 1.287,
+      "mae_increase": 0.089
+    },
+    {
+      "left_out": "sea",
+      "mae": 1.227,
+      "mae_increase": 0.029
+    },
+    {
+      "left_out": "land_cover",
+      "mae": 1.232,
+      "mae_increase": 0.033
+    }
+  ],
+  "top_features": {
+    "lightgbm_hourly": {
+      "upwind_sea": 0.258,
+      "era5_ssrd": 0.145,
+      "era5_dpd": 0.121,
+      "era5_dt1": 0.077,
+      "era5_t2m": 0.065,
+      "era5_dt3": 0.064,
+      "hour_sin": 0.061,
+      "era5_wind": 0.051
+    },
+    "lightgbm_cell": {
+      "elev_minus_era5": 0.263,
+      "era5_sea_share": 0.242,
+      "era5_ssrd": 0.095,
+      "upwind_sea": 0.086,
+      "era5_dpd": 0.05,
+      "hour_sin": 0.046,
+      "era5_wind": 0.04,
+      "era5_dt1": 0.039
+    },
+    "lightgbm_sea": {
+      "elev_minus_era5": 0.206,
+      "dist_sea_km": 0.143,
+      "era5_sea_share": 0.116,
+      "sea_frac_10km": 0.095,
+      "era5_ssrd": 0.079,
+      "sea_frac_25km": 0.079,
+      "hour_sin": 0.047,
+      "upwind_sea": 0.042
+    },
+    "lightgbm": {
+      "elev_minus_era5": 0.13,
+      "era5_ssrd": 0.067,
+      "era5_sea_share": 0.059,
+      "hour_sin": 0.054,
+      "shrub_grass_far": 0.05,
+      "built_near": 0.048,
+      "crop_far": 0.044,
+      "bare_near": 0.044
+    },
+    "lightgbm_first_design": {
+      "elev_minus_era5": 0.333,
+      "elev": 0.308,
+      "era5_ssrd": 0.077,
+      "hour_sin": 0.039,
+      "era5_dpd": 0.039,
+      "upwind_sea": 0.038,
+      "era5_wind": 0.032,
+      "era5_dt1": 0.031
+    }
+  },
+  "stations_worse_after_correction": [
+    "Al-Jouf",
+    "Rafha",
+    "Dammam-King Fahd International Airport",
+    "Shahre-Kord",
+    "Ahwaz",
+    "Mahshahr / Bandar Mahshahr / Bandar-e M?hshahr",
+    "Bushehr Civ / Afb",
+    "Bandar Lengeh",
+    "Al Baha",
+    "Wadi Al Dawasser Airport",
+    "Khamis Mushait",
+    "Dubai International Airport",
+    "Fujairah",
+    "Abu Dhabi International Airport",
+    "Al Ain International Airport",
+    "Khassab",
+    "Seeb, International Airport",
+    "Al Dhafra / Al Muqa??arah"
+  ]
+}

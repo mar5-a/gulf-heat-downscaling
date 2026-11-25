@@ -1,0 +1,7 @@
+time,height,correction,correction_first_design,cells
+02:00 local,below 10 m,-0.24,-0.3,17473
+02:00 local,10 to 25 m,-0.26,-0.19,8571
+02:00 local,above 25 m,-0.42,0.72,6430
+14:00 local,below 10 m,0.84,0.99,17473
+14:00 local,10 to 25 m,1.24,1.46,8571
+14:00 local,above 25 m,1.4,2.73,6430
